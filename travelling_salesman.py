@@ -29,8 +29,8 @@ coordinates = open('coordinates', "r").read().split(';')
 N = len(airports)
 xy = np.zeros((N,2))
 for j in range(N):
-    xy[j,0] = coordinates[j].split(',')[0]  
-    xy[j,1] = coordinates[j].split(',')[1]
+    xy[j,1] = coordinates[j].split(',')[0]  
+    xy[j,0] = coordinates[j].split(',')[1]
 
 #### Simulation parameters ####
 L = N**2/4
@@ -50,9 +50,9 @@ for j in range(N):
                          ha='right',
                          textcoords='offset points')
                          
-start, = plt.plot(xy[0,0],xy[0,1], 'ro', label='Starting point')
+start, = plt.plot(xy[0,0], xy[0,1], 'ro', label='Starting point')
 random_route, = plt.plot(route[:,0], route[:,1],'--', label='Random route')# route
-best_route, = plt.plot([],[], label='Optimized route')
+best_route, = plt.plot([], [], label='Optimized route')
 plt.grid()
 plt.ion()
 figManager = plt.get_current_fig_manager()
